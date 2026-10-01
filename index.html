@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sharad Singh Kushwaha — Full-Stack & AI Developer</title>
+  <meta name="description" content="3D portfolio of Sharad Singh Kushwaha — full-stack developer, AI engineer and startup co-founder." />
+  <meta property="og:title" content="Sharad Singh Kushwaha — Portfolio" />
+  <meta property="og:description" content="Full-stack & AI developer. Explore my projects in an interactive 3D galaxy." />
+  <meta name="theme-color" content="#05060f" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3CradialGradient id='g' cx='35%25' cy='35%25'%3E%3Cstop offset='0' stop-color='%23c4b5fd'/%3E%3Cstop offset='1' stop-color='%236d28d9'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='18' fill='url(%23g)'/%3E%3Cellipse cx='32' cy='32' rx='30' ry='8' fill='none' stroke='%2322d3ee' stroke-width='3' transform='rotate(-20 32 32)'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="loader" aria-hidden="true">
+    <div class="loader-orbit"><span></span></div>
+    <p>Launching<span class="dots"></span></p>
+  </div>
+
+  <canvas id="space" aria-hidden="true"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a href="#home" class="logo" aria-label="Home">SSK<span>.</span></a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Journey</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+    <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow mono">// hello, universe</p>
+        <h1>
+          <span class="hi">I'm</span>
+          <span class="name" id="hero-name"></span>
+        </h1>
+        <p class="role mono"><span class="prompt">&gt;</span> <span id="typed"></span><span class="caret">|</span></p>
+        <p class="tagline" id="hero-tagline"></p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">Explore my work</a>
+          <a href="#contact" class="btn btn-ghost">Get in touch</a>
+        </div>
+        <div class="socials" id="hero-socials"></div>
+      </div>
+      <a href="#about" class="scroll-hint" aria-label="Scroll down">
+        <span class="mouse"><span></span></span>
+        <span class="mono">scroll to fly</span>
+      </a>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container about-grid">
+        <div class="reveal">
+          <p class="eyebrow mono">01 — about</p>
+          <h2>Builder at the edge of <em>AI</em> and the web.</h2>
+          <div id="about-text" class="about-text"></div>
+          <p class="loc mono" id="about-loc"></p>
+        </div>
+        <div class="stats reveal" id="stats"></div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow mono">02 — projects</p>
+          <h2>Planets I've built.</h2>
+          <p class="muted">Each project is a world of its own. Hover to tilt, and watch them orbit in the background as you fly past.</p>
+        </div>
+        <div class="filters reveal" id="filters" role="tablist"></div>
+        <div class="projects-grid" id="projects-grid"></div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow mono">03 — journey</p>
+          <h2>Mission log.</h2>
+        </div>
+        <ol class="timeline" id="timeline"></ol>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <div class="container skills-grid">
+        <div class="reveal">
+          <p class="eyebrow mono">04 — skills</p>
+          <h2>My toolkit, in orbit.</h2>
+          <p class="muted">Drag or move your cursor to spin the sphere. These are the tools I reach for to take an idea from prototype to production.</p>
+          <div class="chips" id="skill-chips"></div>
+        </div>
+        <div class="tag-sphere reveal" id="tag-sphere" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- BEYOND -->
+    <section id="beyond" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow mono">05 — beyond code</p>
+          <h2>Other orbits.</h2>
+        </div>
+        <div class="beyond-grid" id="beyond-grid"></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <div class="container reveal">
+        <p class="eyebrow mono">06 — contact</p>
+        <h2 class="big">Let's build something<br /><span class="grad">out of this world.</span></h2>
+        <p class="muted">Open to full-stack and AI engineering roles, freelance builds and collaborations.</p>
+        <a class="btn btn-primary btn-lg" id="contact-email" href="#">Say hello</a>
+        <div class="socials center" id="contact-socials"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer mono">
+    <span id="footer-text"></span>
+    <span>Built with Three.js · hand-coded</span>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
