@@ -46,4 +46,3 @@ Hosted on **GitHub Pages** (Settings → Pages → Deploy from branch → `main`
 ## 📬 Contact
 
 sharadsingh0203@gmail.com · [GitHub](https://github.com/absolutely-sharad)
-# 3d_ai_assistant_portfolio
